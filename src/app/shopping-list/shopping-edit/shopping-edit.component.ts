@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ingredient } from 'src/app/shared/ingredient.model';
+import { ShoppingListService } from '../shopping-list.service';
 
 @Component({
   selector: 'app-shopping-edit',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent implements OnInit {
-
-  constructor() { }
-
+  constructor(private shoppingService: ShoppingListService) { }
+  name : string ="";
   ngOnInit(): void {
+  }
+  onSave(inputName:HTMLInputElement,inputAmount:HTMLInputElement){
+    let ingred = new ingredient(inputName.value,+inputAmount.value);
+    this.shoppingService.addIngredient(ingred);
   }
 
 }

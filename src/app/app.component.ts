@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  page = "recipe"
   title = 'shopping-project';
+  onNavigate(event:string){
+    this.page  = event
+  }
 }

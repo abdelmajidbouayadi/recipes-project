@@ -1,40 +1,49 @@
-<div class="row">
-  <div class="col-sm-12">
-    <h1>Recipe name</h1>
-  </div>
+<div *ngIf="!recipe">
+  <p>please select a recipe!</p>
 </div>
 
-<div class="row">
-  <div class="col-sm-12">
-    <div class="dropdown">
-      <a
-        class="btn btn-primary dropdown-toggle"
-        href="#"
-        role="button"
-        id="dropdownMenuLink"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Manage recipe
-      </a>
+<div *ngIf="recipe">
+  <div class="row">
+    <div class="col-sm-12">
+      <img [src]="recipe?.imagePath" [alt]="recipe?.name" width="500"   class="responsive">
+      <h1>{{recipe?.name}}</h1>
+    </div>
+  </div>
 
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <li><a class="dropdown-item" href="#">To shopping list</a></li>
-        <li><a class="dropdown-item" href="#">Edit recipe</a></li>
-        <li><a class="dropdown-item" href="#">delete recipe</a></li>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="dropdown my-2" dropdown>
+        <a
+          class="btn btn-primary dropdown-toggle"
+          role="button"
+          id="dropdownMenuLink"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Manage recipe
+        </a>
+
+        <ul class="dropdown-menu"  aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" href="#">To shopping list</a></li>
+          <li><a class="dropdown-item" href="#">Edit recipe</a></li>
+          <li><a class="dropdown-item" href="#">delete recipe</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-12">
+      {{recipe?.description}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 mt-2">
+      <ul class="list-group " *ngFor="let ingredient of recipe.ingredients">
+        <li class="list-group-item"> {{ingredient.name }} ({{ingredient.amount}}) </li>
       </ul>
     </div>
   </div>
-</div>
 
-
-<div class="row">
-  <div class="col-sm-12">
-    description
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-12">
-    ingredient
-  </div>
 </div>
