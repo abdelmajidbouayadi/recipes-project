@@ -1,4 +1,4 @@
-<button type="button" class="list-group-item list-group-item-action "  (click)="onClick()" >
+<button type="button" class="list-group-item list-group-item-action " [routerLink]="[recipe?.id]">
   <div class="d-flex text-muted pt-3">
     <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="50" height="50" [src]="recipe?.imagePath">
     <div class="pb-3 mb-0 small lh-sm border-bottom w-100">

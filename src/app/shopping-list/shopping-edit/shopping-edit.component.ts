@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ingredient } from 'src/app/shared/ingredient.model';
+import { Ingredient } from 'src/app/shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list.service';
 
 @Component({
@@ -13,8 +13,8 @@ export class ShoppingEditComponent implements OnInit {
   ngOnInit(): void {
   }
   onSave(inputName:HTMLInputElement,inputAmount:HTMLInputElement){
-    let ingred = new ingredient(inputName.value,+inputAmount.value);
-    this.shoppingService.addIngredient(ingred);
+    let ingred = new Ingredient(inputName.value,+inputAmount.value);
+    this.shoppingService.addIngredient([ingred]);
   }
 
 }
