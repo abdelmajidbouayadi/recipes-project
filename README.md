@@ -1,4 +1,4 @@
-# ShoppingProject
+# RecipesProject
 
 A recipe app built with Angular and Firebase server. The app does the following:
 
