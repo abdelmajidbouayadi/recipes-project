@@ -1,11 +1,21 @@
-<button type="button" class="list-group-item list-group-item-action " [routerLink]="[recipe?.id]">
+<button
+  type="button"
+  class="list-group-item list-group-item-action"
+  [routerLink]="[recipe?.id]"
+  routerLinkActive="selected"
+>
   <div class="d-flex text-muted pt-3">
-    <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="50" height="50" [src]="recipe?.imagePath">
+    <img
+      class="bd-placeholder-img flex-shrink-0 me-2 rounded"
+      width="50"
+      height="50"
+      [src]="recipe?.imagePath"
+    />
     <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
       <div class="d-flex justify-content-between">
-        <strong class="text-gray-dark">{{recipe?.name}}</strong>
+        <strong class="text-gray-dark">{{ recipe?.name }}</strong>
       </div>
-      <span class="d-block">{{recipe?.description}}</span>
+      <span class="d-block">{{ recipe?.description }}</span>
     </div>
   </div>
 </button>
