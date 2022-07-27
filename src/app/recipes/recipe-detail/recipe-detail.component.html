@@ -41,7 +41,8 @@
             Edit recipe</a
           >
         </li>
-        <li><a class="dropdown-item" href="#">delete recipe</a></li>
+        <li><a class="dropdown-item" (click)="deleteRecipe(recipe?.id)"
+          style="cursor: pointer">delete recipe</a></li>
       </ul>
     </div>
   </div>

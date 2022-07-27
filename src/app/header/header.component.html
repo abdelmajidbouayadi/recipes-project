@@ -17,12 +17,12 @@
       </ul>
       <ul class="navbar-nav navbar-right">
         <li class="nav-item dropdown" dropdown>
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle"   id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             manage
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">fetch data</a></li>
-            <li><a class="dropdown-item" href="#" >save data</a></li>
+            <li><a class="dropdown-item" style="cursor: pointer;" (click)="fetchData()" >fetch data</a></li>
+            <li><a class="dropdown-item"  style="cursor: pointer;" (click)="saveData()" >save data</a></li>
           </ul>
         </li>
       </ul>
